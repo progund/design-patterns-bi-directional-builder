@@ -1,29 +1,39 @@
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-public class SwingDisplay{
+import javax.swing.*;
+
+public class SwingDisplay {
+  
   private JFrame frame;
   private JPanel panel;
   private JMenu fileMenu;
   private JMenuBar menuBar;
   private JMenuItem quit;
   private Contact contact;
-  public SwingDisplay(JPanel contactPanel){
+
+  public SwingDisplay(JPanel contactPanel) {
     this.panel = contactPanel;
     initComponents();
     layoutComponents();
     show();
   }
-  private void show(){ frame.setVisible(true); }
-  private void initComponents(){
+  
+  private void show() {
+    frame.setVisible(true);
+  }
+  
+  private void initComponents() {
     frame = new JFrame("Contact display");
     menuBar = new JMenuBar();
     fileMenu = new JMenu("File");
     quit = new JMenuItem("Quit");
   }
-  private void layoutComponents(){
-    quit.addActionListener(new ActionListener(){
-        public void actionPerformed(ActionEvent ae){ frame.dispose(); }
+  
+  private void layoutComponents() {
+    quit.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent ae) {
+          frame.dispose();
+        }
       });
     fileMenu.add(quit);
     menuBar.add(fileMenu);
