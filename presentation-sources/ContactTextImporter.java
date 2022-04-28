@@ -1,32 +1,40 @@
 import java.util.Scanner;
-public class ContactTextImporter implements Contact.Importer{
-  public String provideName(){
+
+public class ContactTextImporter implements Contact.Importer {
+  
+  public String provideName() {
     return askFor("Name: ");
   }
-  public String provideEmail(){
+  
+  public String provideEmail() {
     return askFor("Email: ");
   }
-  public String providePhone(){
+  
+  public String providePhone() {
     return askFor("Phone: ");
   }
-  public void open(){
+  
+  public void open() {
     showHeader();
   }
-  public void close(){
+  
+  public void close() {
     showBye();
   }
 
-  private void showHeader(){
+  private void showHeader() {
     System.out.println("===New Contact Form===");
   }
-  private void showBye(){
+  
+  private void showBye() {
     System.out.println("Bye!");
   }
-  private String askFor(String prompt){
-    try{
+  
+  private String askFor(String prompt) {
+    try {
       System.out.print(prompt);
       return new Scanner(System.in).nextLine();
-    }catch(Exception e){
+    } catch (Exception e) {
       throw new RuntimeException("Error getting " + prompt + " " + e);
     }
   }
