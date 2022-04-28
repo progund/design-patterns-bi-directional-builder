@@ -1,21 +1,26 @@
-import javax.swing.*;
 import java.awt.*;
-public class GUIExporter implements Contact.Exporter{
+import javax.swing.*;
+
+public class GUIExporter implements Contact.Exporter {
+  
   private String name;
   private String email;
   private String phone;
-  public void addName(String name){
+
+  public void addName(String name) {
     this.name = name;
   }
-  public void addEmail(String email){
+  
+  public void addEmail(String email) {
     this.email = email;
   }
-  public void addPhone(String phone){
+  
+  public void addPhone(String phone) {
     this.phone = phone;
   }
 
   /* A getter! */
-  public JPanel getJPanel(){
+  public JPanel getJPanel() {
     JPanel panel = new JPanel();
     panel.setLayout(new GridLayout(3,2));
     panel.add(new JLabel("Name:"));
